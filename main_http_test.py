@@ -13,5 +13,5 @@ class Counter(resource.Resource):
         content = ""
         return content.encode("ascii")
 
-endpoints.serverFromString(reactor, "tcp:8800").listen(server.Site(Counter()))
+endpoints.serverFromString(reactor, "tcp:5555").listen(server.Site(Counter()))
 reactor.run()
