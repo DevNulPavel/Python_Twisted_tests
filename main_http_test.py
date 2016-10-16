@@ -8,10 +8,10 @@ class Counter(resource.Resource):
     numberRequests = 0
 
     def render_GET(self, request):
-        self.numberRequests += 1
-        request.setHeader(b"content-type", b"text/plain")
-        content = u"I am request #{}\n".format(self.numberRequests)
+        # self.numberRequests += 1
+        # request.setHeader(b"content-type", b"text/plain")
+        content = ""
         return content.encode("ascii")
 
-endpoints.serverFromString(reactor, "tcp:8080").listen(server.Site(Counter()))
+endpoints.serverFromString(reactor, "tcp:8800").listen(server.Site(Counter()))
 reactor.run()
